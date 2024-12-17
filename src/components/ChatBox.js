@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
 import "./ChatBox.css";
-import profile_pic from "../assets/profile_alison.png";
 import logo_pic from "../assets/logo_icon.png";
 import avatar_pic from "../assets/avatar_icon.png";
 import greendot_pic from "../assets/green_dot.png";
@@ -8,7 +7,6 @@ import help_icon from "../assets/help_icon.png";
 import arrow_icon from "../assets/arrow_icon.png";
 import gallery_pic from "../assets/gallery_icon.png";
 import send_button from "../assets/send_button.png";
-import pic1_pic from "../assets/pic1.png";
 import { AppContext } from '../context/AppContext';
 import { arrayUnion, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
@@ -132,7 +130,7 @@ const ChatBox = () => {
     },[messagesId, setMessages])
 
     return chatUser ? (
-        <div className={`chat-box h-[85vh] relative bg-[#f1f5ff] ${chatVisible ? "" : "hidden"}`}>
+        <div className={`chat-box h-[85vh] relative bg-[#f1f5ff] ${!chatVisible ? "md:block hidden" : ""}`}>
             {/* chat user */}
             <div className='chat-user px-[15px] py-[10px] flex items-center gap-[10px]'>
                 <img className='w-[38px] rounded-[50%] aspect-square bg-gray-200'
@@ -149,7 +147,7 @@ const ChatBox = () => {
             {/* chat messages */}
             <div className='chat-messages pb-[50px] overflow-y-scroll flex flex-col-reverse'>
                 {messages.map((msg,index)=>(
-                    <div className={`flex items-end justify-end gap-[5px] px-[15px] py-0 ${msg.sId === userData.id ? 'msg-s' : 'msg-r'}`}>
+                    <div className={`flex items-end justify-end gap-[5px] px-[15px] py-0 ${msg.sId === userData.id ? 'msg-s' : 'msg-r'}`} key={index}>
 
                         {msg["image"] ? 
                         <img onClick={()=>window.open(msg.image)} className='max-w-[230px] max-h-[230px] mb-[30px] rounded-[10px] cursor-pointer' src={msg.image} alt="User-uploaded content"/> :
@@ -181,7 +179,7 @@ const ChatBox = () => {
     )
     : 
     // welcome div if no chatUser is selected yet
-    <div className={ `w-[100%] flex flex-col justify-center items-center gap-[5px] ${chatVisible ? "" : "hidden"}`}>
+    <div className={`w-[100%] flex flex-col justify-center items-center gap-[5px] ${!chatVisible ? "md:flex hidden" : ""}`}>
         <img className='w-[60px]' src={logo_pic} alt="logo-picture"/>
         <p className='text-[20px] font-medium text-[#383838]'>Chat anytime, anywhere</p>
     </div>

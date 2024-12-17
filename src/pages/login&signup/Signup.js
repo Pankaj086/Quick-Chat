@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logoImg from "../../../src/assets/logo.png";
+import logoImg from "../../../src/assets/logo_big.png";
 import "./Login.css";
 import { TextField, Button, Checkbox, FormControlLabel } from '@mui/material';
 import Typography from '@mui/material/Typography';

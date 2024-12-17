@@ -4,7 +4,6 @@ import logo_pic from "../assets/logo.png";
 import menu_icon from "../assets/menu_icon.png";
 import search_pic from "../assets/search_icon.png";
 import avatar_pic from "../assets/avatar_icon.png";
-import profile_pic from "../assets/profile_alison.png";
 import { useNavigate } from 'react-router-dom';
 import { db, logout } from '../config/firebase';
 import { arrayUnion, collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore';
@@ -156,7 +155,7 @@ const LeftSideBar = () => {
     },[chatData])
     
     return (
-        <div className={`lsb bg-[#001030] text-white h-[85vh] ${chatVisible ? "hidden" : ""}`}>
+        <div className={`lsb bg-[#001030] text-white h-[85vh] ${chatVisible ? "md:block hidden" : ""}`}>
 
             {/* lsb-top-section */}
             <div className='p-[20px]'>

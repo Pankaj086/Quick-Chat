@@ -1,11 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./RightSideBar.css";
-import profile_pic from "../assets/profile_alison.png";
 import greendot_pic from "../assets/green_dot.png";
-// import pic1_pic from "../assets/pic1.png";
-// import pic2_pic from "../assets/pic2.png";
-// import pic3_pic from "../assets/pic3.png";
-// import pic4_pic from "../assets/pic4.png";
 import { logout } from '../config/firebase';
 import { AppContext } from '../context/AppContext';
 
@@ -49,11 +44,6 @@ const RightSideBar = () => {
                     <p className='text-start'>Media</p>
                     <div>
                     {msgImages.map((url,index)=>(<img onClick={()=>window.open(url)} key={index} src={url} alt=''/>))}
-                        {/* <img src={pic1_pic} alt=''/>
-                        <img src={pic2_pic} alt=''/>
-                        <img src={pic3_pic} alt=''/>
-                        <img src={pic4_pic} alt=''/> */}
-                        
                     </div>
                 </div>
                 <button onClick={logoutHandler} className='absolute bottom-[20px] left-[50%] -translate-x-[50%] bg-[#077eff] text-white border-none text-[12px] font-light py-[10px] px-[65px] rounded-[20px] cursor-pointer hover:bg-[#077fffc7]'>Logout</button>

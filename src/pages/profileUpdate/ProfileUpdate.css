@@ -9,8 +9,8 @@
 
 /* ProfileUpdate.css */
 .loader {
-    border: 4px solid #f3f3f3; /* Light grey */
-    border-top: 4px solid #077eff; /* Blue */
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #077eff;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -23,5 +23,25 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width:900px){
+    .profileDiv{
+        overflow: hidden;
+    }
+    /* .profile-content{
+        height: 85vh;
+    } */
+    .profile-img{
+        
+    }
+    .profile-content {
+        padding-top: 20px;
+        display: flex;
+        /* height: 85vh; */
+        flex-direction: column-reverse;
+        gap: -240px;
+        align-items: center; /* Center align content */
     }
 }

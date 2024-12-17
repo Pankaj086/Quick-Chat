@@ -18,4 +18,8 @@
         justify-content: center;
         gap: 30px;
     }
+    .logo{
+        width: 100px;
+        height: 160px;
+    }
 }

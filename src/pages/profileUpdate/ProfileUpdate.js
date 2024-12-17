@@ -117,14 +117,15 @@ const ProfileUpdate = () => {
 
     return (
         <div className='profileDiv min-h-[100vh] flex items-center justify-center'>
-            <div className='bg-white flex items-center justify-between min-w-[700px] rounded-[10px]'>
-                <form className='flex flex-col gap-[20px] p-[40px]' onSubmit={handleSave}>
+            <div className='profile-content bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-between min-w-[700px] rounded-[10px] flex-col-reverse md:flex-row bg-opacity-10'>
+
+                <form className='profile-form flex flex-col gap-[10px] md:gap-[20px] p-[40px]' onSubmit={handleSave}>
                     <h3 className='font-medium'>Profile Details</h3>
 
                     <label className='flex items-center gap-[10px] text-gray-600 cursor-pointer' htmlFor='avatar'>
                         <input onChange={changeHandler} type='file' id='avatar' accept='.png, .jpg, .jpeg' hidden />
                         <img
-                            className='w-[50px] aspect-square rounded-[50%]'
+                            className='w-[50px] aspect-square rounded-[50%] border-2 border-orange-400'
                             src={image ? URL.createObjectURL(image) : imageUrl || avatar_pic}
                             alt='avatar-icon'
                         />
@@ -162,8 +163,8 @@ const ProfileUpdate = () => {
 
                 {/* Display uploaded image */}
                 <img
-                    className='max-w-[160px] aspect-square mx-auto my-[20px] rounded-[50%]'
-                    src={image ? URL.createObjectURL(image) : imageUrl || logo_pic}
+                    className='profile-img w-[120px] md:max-w-[160px] aspect-square mx-auto my-[20px] rounded-[50%] border-2 border-orange-400'
+                    src={image ? URL.createObjectURL(image) : imageUrl || avatar_pic}
                     alt='logo-picture'
                 />
             </div>
