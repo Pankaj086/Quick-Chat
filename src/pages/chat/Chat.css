@@ -1,0 +1,18 @@
+/* .chat{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+} */
+
+.chat-container{
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+@media (max-width:900px){
+    .chat-container{
+        display: flex;
+    }
+    .loading{
+        font-size: 30px;
+    }
+}

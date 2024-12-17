@@ -1,0 +1,22 @@
+.mediaDiv div{
+    max-height: 180px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.mediaDiv div img{
+    width: 160px;
+    height: 60px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width:900px){
+    .rsb{
+        display: none;
+    }
+}
+

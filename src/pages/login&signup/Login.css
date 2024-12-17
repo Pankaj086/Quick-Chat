@@ -1,0 +1,21 @@
+.loginPage{
+    min-height: 100vh;
+    background: url(/public/background.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.loginPage .logo{
+    width: max(20vw, 200px);
+}
+
+@media (max-width:768px){
+    .loginPage{
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+}

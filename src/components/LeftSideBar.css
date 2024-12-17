@@ -1,0 +1,25 @@
+.input-feild-search input::placeholder{
+    color: #c8c8c8;
+}
+
+.submenu{
+    display: none;
+}
+
+.menu:hover .submenu{
+    display: block;
+}
+
+.border-msg img{
+    border: 3px solid #07fff3;
+}
+
+.border-msg span{
+    color: #07fff3;
+}
+
+@media (max-width:900px){
+    .lsb{
+        width: 100%;
+    }
+}
