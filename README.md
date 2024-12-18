@@ -1,13 +1,13 @@
 # QuickChat Application 📱💬  
 
-QuickChat is a real-time chat application that enables users to chat with each other securely. Built with **React** and **Firebase**, the app features a modern, responsive design, user authentication, online/offline indicators, and file sharing capabilities.
+QuickChat is a real-time chat application that enables users to chat with each other securely. Built with **React**, **Clodinary** and **Firebase**, the app features a modern, responsive design, user authentication, online/offline indicators, and file sharing capabilities.
 
 ---
 
 ## Deployment Link 🌐  
 
 The application is live and accessible at:  
-[QuickChat on Vercel](https://quick-chat-twm1.vercel.app/)
+[QuickChat Deployment](https://quick-chat-twm1.vercel.app/)
 
 ---
 
