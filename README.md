@@ -7,7 +7,7 @@ QuickChat is a real-time chat application that enables users to chat with each o
 ## Deployment Link 🌐  
 
 The application is live and accessible at:  
-[QuickChat on Vercel](https://your-deployment-link.vercel.app/) *(Replace this with your actual link)*  
+[QuickChat on Vercel](https://quick-chat-twm1.vercel.app/)
 
 ---
 
@@ -26,7 +26,7 @@ The application is live and accessible at:
 
 ### 4. File Sharing 📂  
 - Share images and photos (`.jpg`, `.png`, etc.).  
-- File uploads are securely handled by Firebase Storage.  
+- File uploads are securely handled by Cloudinary.  
 
 ### 5. Responsive Design 📱  
 - Tailwind CSS ensures the app looks great on all devices.  
@@ -36,7 +36,8 @@ The application is live and accessible at:
 ## Technology Stack 🛠️  
 
 - **Frontend**: React.js  
-- **Backend**: Firebase (Authentication, Firestore, and Storage)  
+- **Backend**: Firebase (Authentication, Firestore)
+- **Storage**: Cloudinary (Storage)  
 - **Styling**: Tailwind CSS  
 
 
