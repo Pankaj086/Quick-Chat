@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import "./ProfileUpdate.css";
 import avatar_pic from "../../assets/avatar_icon.png";
-import logo_pic from "../../assets/logo_icon.png";
 import { uploadFile } from '../../library/Upload';
 import { toast } from "react-toastify";
 import { onAuthStateChanged } from 'firebase/auth';

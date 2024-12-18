@@ -30,18 +30,11 @@
     .profileDiv{
         overflow: hidden;
     }
-    /* .profile-content{
-        height: 85vh;
-    } */
-    .profile-img{
-        
-    }
     .profile-content {
         padding-top: 20px;
         display: flex;
-        /* height: 85vh; */
         flex-direction: column-reverse;
         gap: -240px;
-        align-items: center; /* Center align content */
+        align-items: center;
     }
 }
