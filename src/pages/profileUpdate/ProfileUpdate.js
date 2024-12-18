@@ -157,7 +157,7 @@ const ProfileUpdate = () => {
                 {/* Show loading spinner while uploading */}
                 {uploadProgress > 0 && uploadProgress < 100 && (
                     <div className="flex items-center justify-center my-4">
-                        <div className="loader"></div> {/* Add a CSS spinner */}
+                        <div className="loaderProfile"></div> {/* Add a CSS spinner */}
                     </div>
                 )}
 
