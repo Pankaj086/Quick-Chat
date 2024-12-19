@@ -19,7 +19,7 @@ const Chat = () => {
         <div className='chat min-h-[100vh] flex justify-center items-center relative z-0 bg-black' >
             {
                 loading ?
-                <div class="loader">Loading
+                <div className="loader">Loading
                     <span></span>
                 </div>
                 :
