@@ -1,15 +1,35 @@
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from 'firebase/auth';
-import { doc, getFirestore, setDoc, getDoc, collection, query, where, getDocs } from "firebase/firestore";
 import { toast } from "react-toastify";
 
+import { 
+    createUserWithEmailAndPassword, 
+    getAuth, 
+    signInWithPopup, 
+    GoogleAuthProvider, 
+    signInWithEmailAndPassword, 
+    signOut, 
+    sendPasswordResetEmail 
+} from 'firebase/auth';
+import { 
+    doc, 
+    getFirestore, 
+    setDoc, 
+    getDoc, 
+    collection, 
+    query, 
+    where, 
+    getDocs 
+} from "firebase/firestore";
+
+
+// Load Firebase configuration from environment variables
 const firebaseConfig = {
-    apiKey: "AIzaSyBL-0V30cqWxYfLPByV6kmoH__tsaSufXc",
-    authDomain: "quick-chat-app-87571.firebaseapp.com",
-    projectId: "quick-chat-app-87571",
-    storageBucket: "quick-chat-app-87571.firebasestorage.app",
-    messagingSenderId: "438854852059",
-    appId: "1:438854852059:web:4088ba7de9634ec614dbfe"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -42,21 +62,20 @@ const signup = async (username, email, password) => {
         toast.success("User created successfully!");
     } catch (error) {
         console.error("Error signing up:", error);
-        // Display a more informative error message
         toast.error(error?.code?.split('/')[1]?.split('-').join(" ") || "Something went wrong during signup!");
     }
 };
 
-// login 
+// Login with email and password
 const login = async (email, password) => {
-    try{
+    try {
         await signInWithEmailAndPassword(auth, email, password);
         toast.success("Logged In successfully!");
-    } catch(error){
+    } catch (error) {
         console.error("Error logging in:", error);
         toast.error(error?.code?.split('/')[1]?.split('-').join(" ") || "Something went wrong during login!");
     }
-}
+};
 
 // Sign up with Google
 const signupWithGoogle = async () => {
@@ -73,7 +92,7 @@ const signupWithGoogle = async () => {
             // Save user data to Firestore
             await setDoc(userDocRef, {
                 id: user.uid,
-                username: user.displayName || "Unnamed User", // You can update this later
+                username: user.displayName || "Unnamed User",
                 email: user.email,
                 avatar: user.photoURL || "",
                 bio: "Hey, There! I am using Quick Chat!",
@@ -82,7 +101,7 @@ const signupWithGoogle = async () => {
 
             // Initialize an empty chat document for the user
             await setDoc(doc(db, "chats", user.uid), {
-                chatsData: [] // Note: corrected from `chatData` to `chatsData`
+                chatsData: []
             });
         }
 
@@ -93,37 +112,36 @@ const signupWithGoogle = async () => {
     }
 };
 
-// logout
+// Logout
 const logout = async () => {
-    try{
+    try {
         await signOut(auth);
         toast.success("Logged out successfully!");
-    }
-    catch(error){
+    } catch (error) {
         toast.error(error?.code?.split('/')[1]?.split('-').join(" ") || "Something went wrong");
     }
-}
+};
 
-const resetPassword = async (email)=> {
-    if(!email){
+// Reset Password
+const resetPassword = async (email) => {
+    if (!email) {
         toast.error("Enter your email");
         return null;
     }
-    try{
-        const userRef = collection(db,"users");
-        const q = query(userRef,where("email","==",email));
+    try {
+        const userRef = collection(db, "users");
+        const q = query(userRef, where("email", "==", email));
         const querySnap = await getDocs(q);
-        if(!querySnap.empty){
-            await sendPasswordResetEmail(auth,email);
+        if (!querySnap.empty) {
+            await sendPasswordResetEmail(auth, email);
             toast.success("Reset Email Sent");
-        }
-        else{
+        } else {
             toast.error("Email doesn't exist");
         }
-    } catch(error){
-        console.log(error);
+    } catch (error) {
+        console.error(error);
         toast.error(error.message);
     }
-}
+};
 
 export { signup, signupWithGoogle, login, logout, auth, db, resetPassword };
