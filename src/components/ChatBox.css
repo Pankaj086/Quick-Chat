@@ -34,11 +34,15 @@
     .chat-box{
         width: 100%;
         justify-content: center;
+        overflow: hidden;
     }
     .chat-user .arrow{
         display: block;
     }
     .chat-user .help{
         display: none;
+    }
+    .chat-input{
+        
     }
 }

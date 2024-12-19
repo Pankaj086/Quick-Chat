@@ -165,7 +165,7 @@ const ChatBox = () => {
             </div>
 
             {/* chat input */}
-            <div className='flex items-center gap-[12px] px-[15px] py-[10px] bg-white absolute bottom-0 left-0 right-0'>
+            <div className='chat-input flex items-center gap-[12px] px-[15px] py-[10px] bg-white absolute bottom-0 left-0 right-0'>
 
                 <input onChange={(e)=>setInput(e.target.value)} value={input} className='flex-1 border-none outline-none'
                 type='text' placeholder='Type a message'/>
