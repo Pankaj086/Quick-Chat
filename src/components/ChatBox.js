@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import "./ChatBox.css";
-import logo_pic from "../assets/logo_icon.png";
+import logo_pic from "../assets/chat_icon.png";
 import avatar_pic from "../assets/avatar_icon.png";
 import greendot_pic from "../assets/green_dot.png";
 import help_icon from "../assets/help_icon.png";

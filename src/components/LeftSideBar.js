@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import "./LeftSideBar.css";
-import logo_pic from "../assets/logo.png";
+import logo_pic from "../assets/chat_icon.png";
 import menu_icon from "../assets/menu_icon.png";
 import search_pic from "../assets/search_icon.png";
 import avatar_pic from "../assets/avatar_icon.png";
@@ -161,14 +161,17 @@ const LeftSideBar = () => {
             <div className='p-[20px]'>
 
                 {/* navbar section */}
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between items-center gap-2'>
 
                     {/* app logo */}
+                    <span className='flex justify-between items-center'>
                     <img
-                        className='max-w-[140px]'
+                        className='w-[38px]'
                         src={logo_pic}
                         alt='logo-picture'
                     />
+                    <span className='text-white text-xl'>uick Chat</span>
+                    </span>
 
                     {/* menu icon */}
                     <div className='menu relative py-[10px] px-0'>

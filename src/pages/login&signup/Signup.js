@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logoImg from "../../../src/assets/logo_big.png";
+import chatLogo from "../../../src/assets/cahtLogo2.png";
 import "./Login.css";
 import { TextField, Button, Checkbox, FormControlLabel } from '@mui/material';
 import Typography from '@mui/material/Typography';
@@ -23,7 +23,7 @@ const Signup = () => {
 
     return (
         <div className='loginPage'>
-            <img src={logoImg} alt='logo-picture' className='logo' />
+            <img src={chatLogo} alt='logo-picture' className='w-[450px]' />
             <form
                 onSubmit={submitHandler}
                 style={{

@@ -9,7 +9,7 @@ import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 
-const ProfileUpdate = () => {
+const ProfileUpdate = () => {   
     const [image, setImage] = useState(null);
     const [imageUrl, setImageUrl] = useState(''); // Store the uploaded image URL
     const [uploadProgress, setUploadProgress] = useState(0); // Upload progress

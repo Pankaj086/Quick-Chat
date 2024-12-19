@@ -20,8 +20,8 @@ const Chat = () => {
             {
                 loading ?
                 <div class="loader">Loading
-  <span></span>
-</div>
+                    <span></span>
+                </div>
                 :
                 <div className='bg-white chat-container w-[100%] h-[85vh] max-w-[1000px] grid grid-cols-3 absolute z-10'>
                     <LeftSideBar/>
